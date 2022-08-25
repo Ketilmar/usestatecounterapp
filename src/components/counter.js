@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export function Example() {
-  // Declare a new state variable, which we'll call "count"
+export function ClickCounter() {
   const [count, setCount] = useState(0);
+
+  let timer = setInterval(() => {
+    setCount(count + 1);
+  }, 5000);
+  // setCount(count + 1);
+  console.log(timer);
+
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  });
 
   return (
     <div>
-      <p>You clicked {count} times</p>
+      <p className="output">You clicked {count} times</p>
       <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button onClick={() => setCount(count - 1)}>Remove Clicks</button>
     </div>
   );
 }
-
-console.log(Example());
