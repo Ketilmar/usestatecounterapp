@@ -3,15 +3,19 @@ import React, { useState, useEffect } from "react";
 export function ClickCounter() {
   const [count, setCount] = useState(0);
 
-  let timer = setInterval(() => {
-    setCount(count + 1);
-  }, 5000);
-  // setCount(count + 1);
-  console.log(timer);
-
   useEffect(() => {
-    document.title = `You clicked ${count} times`;
+    let interval = null;
+    interval = setInterval(() => {
+      setCount(count + 1);
+
+      // console.log("TIKK");
+    }, 1000);
+    return () => {
+      clearInterval(interval);
+    };
   });
+
+  document.title = `You clicked ${count} times`;
 
   return (
     <div>
