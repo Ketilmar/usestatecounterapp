@@ -7,14 +7,12 @@ export function ClickCounter() {
     let interval = null;
     interval = setInterval(() => {
       setCount(count + 1);
-
-      // console.log("TIKK");
     }, 1000);
     return () => {
       clearInterval(interval);
     };
   });
-
+  // console.log("TIKK");
   document.title = `You clicked ${count} times`;
 
   return (
