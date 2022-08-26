@@ -11,8 +11,8 @@ export function ClickCounter() {
     return () => {
       clearInterval(interval);
     };
-  });
-  // console.log("TIKK");
+  }); // vis jeg legger inn et tomt "dependency array" her (...},[]);...), vil ikke appen gå i loop.
+
   document.title = `You clicked ${count} times`;
 
   return (
