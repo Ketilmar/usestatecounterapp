@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 
+// just put a comment here to quickly test branch feature
 export function ClickCounter() {
   const [count, setCount] = useState(0);
 
